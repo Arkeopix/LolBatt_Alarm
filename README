@@ -1,0 +1,5 @@
+There's not much to say about this script.
+
+If you're having trouble with the beeping part, you might want to check
+/ect/modprobe.d/beep.conf.
+
