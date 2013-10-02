@@ -18,10 +18,7 @@ while (42) {
 	close(BATT);
     }
     
-    my $res = ($values[0] / $values[1]) * 100;
-    print $res, "\n";
-
-    if (($values[0] / $values[1]) * 100 <= 100) {
+    if (($values[0] / $values[1]) * 100 <= 10) {
 	my $beeper = Audio::Beep->new();
 	my $music = q|
 	g g g d|; 
