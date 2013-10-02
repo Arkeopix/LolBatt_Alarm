@@ -25,7 +25,7 @@ while (42) {
 	if ($pid == 0) {
 	    my $beeper = Audio::Beep->new();
 	    my $music = q|
-	      g g g d|; 
+	      g g g d a a a a a a a a a a a|; 
 	    $beeper->play($music);
 	} else {
 	    my $done = 0;
@@ -36,13 +36,11 @@ while (42) {
 		    $str = $_;
 		}
 		close(STATUS);
-		if ($str eq "Charging\n") {
-		    print "coucou\n";
+		if ($str eq "Unknown\n") {
 		    kill 9, $pid;
 		    $done = 1;
 		}
 	    }
-	    wait();
 	}
     }
     sleep(60);
