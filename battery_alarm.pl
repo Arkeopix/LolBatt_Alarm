@@ -5,7 +5,7 @@
 use Modern::Perl;
 use Audio::Beep;
 
-#while (42) {
+while (42) {
     my @paths = ("/sys/class/power_supply/BAT0/charge_now", 
 		 "/sys/class/power_supply/BAT0/charge_full");
     my @values;
@@ -21,12 +21,12 @@ use Audio::Beep;
     my $res = ($values[0] / $values[1]) * 100;
     print $res, "\n";
 
-    if (($values[0] / $values[1]) * 100 <= 10) {
+    if (($values[0] / $values[1]) * 100 <= 100) {
 	my $beeper = Audio::Beep->new();
 	my $music = q|
 	g g g d|; 
 	$beeper->play($music);
+    }
+    sleep(60);
 }
- #   sleep(60);
-#}
-    
+
