@@ -20,7 +20,7 @@ while (42) {
 	close(BATT);
     }
     
-    if (($values[0] / $values[1]) * 100 <= 100) {
+    if (($values[0] / $values[1]) * 100 <= 10) {
 	my $pid = fork();
 	if ($pid == 0) {
 	    my $beeper = Audio::Beep->new();
