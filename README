@@ -1,6 +1,5 @@
 There's not much to say about this script.
-
+it targets Fedora 18+
 Just be sure to have the correct module installed (man cpan).
 If you're having trouble with the beeping part, you might want to check
-/ect/modprobe.d/beep.conf (depends on your OS).
-
+/ect/modprobe.d/beep.conf.

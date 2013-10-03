@@ -25,7 +25,10 @@ while (42) {
 	if ($pid == 0) {
 	    my $beeper = Audio::Beep->new();
 	    my $music = q|
-	      g g g d a a a a a a a a a a a|; 
+	      g g g dis ais' g dis ais' g e' e e f ais, fis dis ais' 
+              g c g'1 g c
+              b a g f g gis d c b ais a ais g ais e c g g c b a g f g gis
+              |; 
 	    $beeper->play($music);
 	} else {
 	    my $done = 0;
