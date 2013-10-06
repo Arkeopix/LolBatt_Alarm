@@ -11,7 +11,7 @@ while (42) {
 		 "/sys/class/power_supply/BAT0/status");
     my @values;
     
-    for (my $x = 1; $x < 3; $x++) {
+    for (my $x = 1; $x < 4;  $x++) {
 	open(BATT, $paths[$x -1]) 
 	    or die "Battery File ($paths[$x -1])not found\n";
 	while (<BATT>) {
@@ -20,7 +20,7 @@ while (42) {
 	close(BATT);
     }
     
-    if (($values[0] / $values[1]) * 100 <= 10) {
+    if (($values[0] / $values[1]) * 100 <= 10 && values[2] ne "Charging") {
 	my $pid = fork();
 	if ($pid == 0) {
 	    my $beeper = Audio::Beep->new();
