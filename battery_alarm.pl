@@ -19,8 +19,8 @@ while (42) {
 	}
 	close(BATT);
     }
-    
-    if (($values[0] / $values[1]) * 100 <= 10 && values[2] ne "Charging") {
+
+    if (($values[0] / $values[1]) * 100 <= 10 && $values[2] ne "Charging\n") {
 	my $pid = fork();
 	if ($pid == 0) {
 	    my $beeper = Audio::Beep->new();
